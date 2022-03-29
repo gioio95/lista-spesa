@@ -37,7 +37,20 @@ class ArticoloDb {
     }).toList();
   }
 
-  Future aggiornaArticoli(Articolo) async {
+  Future aggiornaArticoli(Articolo articolo) async {
     Database db = await _openDb();
+    final finder = Finder(filter: Filter.byKey(articolo.id));
+    await store.update(db, articolo.transformaInMap(), finder: finder);
+  }
+
+  Future eliminaArticolo(Articolo articolo) async {
+    Database db = await _openDb();
+    final finder = Finder(filter: Filter.byKey(articolo.id));
+    await store.delete(db, finder: finder);
+  }
+
+  Future eliminaTuttiGliArticolo() async {
+    Database db = await _openDb();
+    await store.delete(db);
   }
 }

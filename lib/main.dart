@@ -50,7 +50,7 @@ class _ProvaDbState extends State<ProvaDb> {
 
   Future provaDb() async {
     ArticoloDb articoloDb = ArticoloDb();
-    Articolo articolo = Articolo(0, 'arancia', '', '3', 'kg');
+    Articolo articolo = Articolo(null, 'Arancia', null, '2', 'kg');
     id = await articoloDb.iniserisciArticolo(articolo);
     setState(() {
       print(id);

@@ -1,7 +1,7 @@
 class Articolo {
-  int id = 0;
+  int? id = 0;
   String nome = '';
-  String note = '';
+  String? note = '';
   String unitaMisura = 'pz';
   String quantita = '';
 
